@@ -1,6 +1,6 @@
 <template>
   <div>
-    <c-flex align="center" justify="center">
+    <c-flex align="center" justify="center" mt="35">
       <c-box
         box-shadow="0 1px 12px rgba(0 0 0/ 25%);"
         p="34px"
@@ -91,11 +91,17 @@ export default {
           const token = response.data.token
           this.$cookies.set('token', token)
           this.$router.push(`/marketplace`)
+          this.$toast({
+            title: 'Berhasil Login',
+            description: '',
+            status: 'success',
+            duration: 10000,
+          })
         })
         .catch((err) => {
           this.$toast({
-            title: err,
-            description: 'Unable to load.',
+            title: 'Terjadi Kesalahan',
+            description: err,
             status: 'error',
             duration: 10000,
           })

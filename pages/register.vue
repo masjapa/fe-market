@@ -5,6 +5,7 @@
       :class="{ active: isActive }"
       align="center"
       justify="center"
+      mt="35"
     >
       <c-box
         box-shadow="0 1px 12px rgba(0 0 0/ 25%);"
@@ -137,6 +138,7 @@
 export default {
   name: 'RegisterPage',
   components: {},
+  layout: 'login',
   data() {
     return {
       firstName: '',
@@ -173,10 +175,21 @@ export default {
           phone: this.phoneNumber,
         })
         .then((response) => {
-          console.log(response)
+          this.$toast({
+            title: 'Register berhasil',
+            description: 'Silahkan login',
+            status: 'success',
+            duration: 10000,
+          })
+          this.$router.push(`/login`)
         })
         .catch((err) => {
-          console.log(err)
+          this.$toast({
+            title: 'Terjadi Kesalahan',
+            description: err,
+            status: 'error',
+            duration: 10000,
+          })
         })
       this.isLoading = false
     },

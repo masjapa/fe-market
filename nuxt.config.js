@@ -7,7 +7,7 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Ariq Dary Prayogo_technical test',
+    title: 'Marketpladce',
     htmlAttrs: {
       lang: 'en',
     },
@@ -40,7 +40,6 @@ export default {
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/stylelint
-    '@nuxtjs/stylelint-module',
     // fontawesome for icons
     '@nuxtjs/fontawesome',
     // axios for fetchAPI
